@@ -99,6 +99,7 @@ const CopyDetails = ({ params }) => {
           award_softcopy: copy.award_softcopy,
           award_hardcopy: copy.award_hardcopy,
           answersheet: copy.answersheet,
+          pending: copy.pending,
         }))
         .sort((a, b) => {
           if (a.status === "SUBMITTED" && b.status !== "SUBMITTED") {
@@ -183,6 +184,20 @@ const CopyDetails = ({ params }) => {
       field: "numStudents",
       headerName: "Number of Students",
       minWidth: 170,
+      renderCell: (params) => {
+        return (
+          <Typography>
+            {params.value}
+            {params.row?.pending?.number > 0 && (
+              <Chip
+                sx={{ ml: 1 }}
+                label={params.row?.pending?.number + " Pending"}
+                color="warning"
+              />
+            )}
+          </Typography>
+        );
+      },
     },
     {
       field: "program",
