@@ -1,33 +1,33 @@
 version: 2
 updates:
-  - package-ecosystem: npm
+  - package-ecosystem:  npm
     directory: "/"
     schedule:
       interval: "weekly"
     groups:
-      - name: ui-components
-        patterns:
+      ui-components:
+         patterns:
           - "@mui/**"
           - "@fullcalendar/**"
-          - "@ngx-lite/*"  # If you have any @ngx-lite dependencies
-      - name: data-management
+          - "@ngx-lite/*" 
+      data-management:
         patterns:
           - "@tanstack/react-query"
           - "axios"
           - "yup"
-      - name: utilities
+      utilities:
         patterns:
           - "date-fns"
           - "dayjs"
           - "notistack"
           - "next-qrcode"
-      - name: prod-deps-major
+      prod-deps-major:
         dependency-type: "production"
         update-types:
           - "major"
         patterns:
           -  "*"
-      - name: rest
+      rest:
         patterns: 
           - "*"
         
