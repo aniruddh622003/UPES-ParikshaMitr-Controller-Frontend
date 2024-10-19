@@ -1,0 +1,33 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    reviewers:
+      - "@username"  # Replace with your desired reviewer
+    groups:
+      - name: ui-components
+        patterns:
+          - "@mui/**"
+          - "@fullcalendar/**"
+          - "@ngx-lite/*"  # If you have any @ngx-lite dependencies
+      - name: data-management
+        patterns:
+          - "@tanstack/react-query"
+          - "axios"
+          - "yup"
+      - name: utilities
+        patterns:
+          - "date-fns"
+          - "dayjs"
+          - "notistack"
+          - "next-qrcode"
+      - name: prod-deps-major
+        dependency-type: "production"
+        update-types:
+          - "major"
+        patterns:
+          -  "*"
+      - name: rest
+        patterns: 
+          - "*"
+        
