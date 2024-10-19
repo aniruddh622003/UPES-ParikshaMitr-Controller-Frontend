@@ -2,8 +2,8 @@ version: 2
 updates:
   - package-ecosystem: npm
     directory: "/"
-    reviewers:
-      - "@username"  # Replace with your desired reviewer
+    schedule:
+      interval: "weekly"
     groups:
       - name: ui-components
         patterns:
